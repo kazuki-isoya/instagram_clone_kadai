@@ -25,6 +25,8 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+gem 'bcrypt', '3.1.11'
+
 group :development, :test do
 
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -47,4 +49,8 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> log_in
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

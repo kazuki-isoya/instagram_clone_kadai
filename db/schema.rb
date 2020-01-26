@@ -10,17 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_01_26_071914) do
+=======
+ActiveRecord::Schema.define(version: 2020_01_24_080324) do
+>>>>>>> log_in
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "feeds", force: :cascade do |t|
     t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> log_in
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
