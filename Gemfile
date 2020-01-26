@@ -49,8 +49,5 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-<<<<<<< HEAD
-=======
 
->>>>>>> log_in
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
