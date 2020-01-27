@@ -2,5 +2,11 @@
 
 <%= render 'form', feed: @feed %>
 
-<%= link_to '詳細を確認', @feed %> |
-<%= link_to '一覧へ戻る', feeds_path %>
+<div class="edit_footer">
+  <button type="button" name="button">
+    <%= link_to '詳細を確認', @feed %>
+  </button>
+  <button type="button" name="button">
+    <%= link_to '一覧へ戻る', feeds_path %>
+  </button>
+</div>

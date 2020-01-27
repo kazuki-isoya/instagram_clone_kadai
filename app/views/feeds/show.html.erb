@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Image:</strong>
   <%= image_tag @feed.image.url %>
 </p>
 
-<%= link_to '編集', edit_feed_path(@feed) %> |
-<%= link_to '戻る', feeds_path %>
+<button type="button" name="button">
+  <%= link_to '編集', edit_feed_path(@feed) %>
+</button>
+
+<button type="button" name="button">
+  <%= link_to '戻る', feeds_path %>
+</button>

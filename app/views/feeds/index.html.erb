@@ -1,5 +1,3 @@
-
-
 <h1>投稿画像一覧</h1>
 <h2>ログイン中のユーザー:<%= current_user.name %></h2>
 
@@ -12,18 +10,36 @@
   </thead>
 
   <tbody>
-    <% @feeds.each do |feed| %>
-      <tr>
-        <td><%= feed.image %></td>
-        <td>投稿ユーザー:<%= feed.user.name %></td>
-        <td><%= link_to '詳細を確認', feed %></td>
-        <td><%= link_to '画像を変更', edit_feed_path(feed) %></td>
-        <td><%= link_to '画像を削除', feed, method: :delete, data: { confirm: '投稿を削除しますか？' } %></td>
-      </tr>
-    <% end %>
+    <div class="container">
+      <% @feeds.each do |feed| %>
+        <tr>
+          <td><%= feed.image %></td>
+          <td>投稿ユーザー:<%= feed.user.name %></td>
+          <td>
+            <button type="button" name="new_toukou" value="">
+              <%= link_to '詳細を確認', feed %>
+            </button>
+          </td>
+          <td>
+            <button type="button" name="button">
+              <%= link_to '画像を変更', edit_feed_path(feed) %>
+            </button>
+          </td>
+          <td>
+            <button type="button" name="button">
+              <%= link_to '画像を削除', feed, method: :delete, data: { confirm: '投稿を削除しますか？' } %>
+            </button>
+          </td>
+        </tr>
+      <% end %>
+    </div>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to '新規投稿', new_feed_path %>
+<div class="toukou_button">
+  <button type="button" name="new_toukou" value="">
+    <%= link_to '新規投稿', new_feed_path %>
+  </button>
+</div>
