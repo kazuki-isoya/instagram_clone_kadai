@@ -12,6 +12,8 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :画像の説明 %>
+    <%= form.text_field :content %>
     <%= form.label :画像 %>
     <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
     <%= form.file_field :image %>
