@@ -18,7 +18,7 @@
         <td>投稿ユーザー:<%= feed.user.name %></td>
         <td><%= link_to '詳細を確認', feed %></td>
         <td><%= link_to '画像を変更', edit_feed_path(feed) %></td>
-        <td><%= link_to '画像を削除', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '画像を削除', feed, method: :delete, data: { confirm: '投稿を削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
