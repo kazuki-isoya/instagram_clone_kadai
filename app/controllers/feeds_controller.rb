@@ -28,15 +28,17 @@ class FeedsController < ApplicationController
   def create
     @feed = Feed.new(feed_params)
     @feed.user_id = current_user.id
-
-    respond_to do |format|
-      if @feed.save
-        format.html { redirect_to @feed, notice: '画像が投稿されました' }
+      if params[:back]
+        render :new
       else
-        format.html { render :new }
+        if @feed.save
+          redirect_to feeds_path, notice: "投稿しました！"
+        else
+          render 'new'
+        end
       end
     end
-  end
+
 
   def update
     respond_to do |format|
@@ -61,6 +63,6 @@ class FeedsController < ApplicationController
     end
 
     def feed_params
-      params.require(:feed).permit(:image, :image_cache)
+      params.require(:feed).permit(:content, :image, :image_cache)
     end
 end

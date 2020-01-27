@@ -2,7 +2,7 @@
 
 <% if @user.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "エラー") %> <%=User.name%>は作成出来ません</h2>
+    <h2><%= pluralize(@user.errors.count, "error") %> アカウントは作成出来ません</h2>
     <ul>
     <% @user.errors.full_messages.each do |message| %>
       <li><%= message %></li>
