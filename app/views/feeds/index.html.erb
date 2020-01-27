@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Feeds</h1>
+<h1>投稿画像一覧</h1>
+<h2>ログイン中のユーザー:<%= current_user.name %></h2>
 
 <table>
   <thead>
     <tr>
-      <th>Image</th>
+      <th>画像</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +15,10 @@
     <% @feeds.each do |feed| %>
       <tr>
         <td><%= feed.image %></td>
-        <td><%= link_to 'Show', feed %></td>
-        <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
-        <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>投稿ユーザー:<%= feed.user.name %></td>
+        <td><%= link_to '詳細を確認', feed %></td>
+        <td><%= link_to '画像を変更', edit_feed_path(feed) %></td>
+        <td><%= link_to '画像を削除', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Feed', new_feed_path %>
+<%= link_to '新規投稿', new_feed_path %>
