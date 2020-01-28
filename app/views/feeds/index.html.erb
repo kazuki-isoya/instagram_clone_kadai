@@ -13,7 +13,7 @@
     <div class="container">
       <% @feeds.each do |feed| %>
         <tr>
-          <td><%= feed.image %></td>
+          <td><%= image_tag feed.image.url %></td>
           <td>投稿ユーザー:<%= feed.user.name %></td>
           <td>コメント:<%= feed.content %></td>
           <td>
