@@ -1,46 +1,46 @@
-<h1>投稿画像一覧</h1>
-<h2>ログイン中のユーザー:<%= current_user.name %></h2>
+<div class="feeds_body">
+  <h1>投稿画像一覧</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>画像</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>画像</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <div class="container">
-      <% @feeds.each do |feed| %>
-        <tr>
-          <td><%= image_tag feed.image.url %></td>
-          <td>投稿ユーザー:<%= feed.user.name %></td>
-          <td>コメント:<%= feed.content %></td>
-          <td>
-            <button type="button" name="new_toukou" value="">
-              <%= link_to '詳細を確認', feed %>
-            </button>
-          </td>
-          <td>
-            <button type="button" name="button">
-              <%= link_to '画像を変更', edit_feed_path(feed) %>
-            </button>
-          </td>
-          <td>
-            <button type="button" name="button">
-              <%= link_to '画像を削除', feed, method: :delete, data: { confirm: '投稿を削除しますか？' } %>
-            </button>
-          </td>
-        </tr>
-      <% end %>
-    </div>
-  </tbody>
-</table>
+    <tbody>
+      <div class="container">
+        <% @feeds.each do |feed| %>
+          <tr>
+            <td><%= image_tag feed.image.url %></td>
+            <td>投稿ユーザー:<%= feed.user.name %></td>
+            <td>コメント:<%= feed.content %></td>
+            <td>
+              <button type="button" name="new_toukou" value="">
+                <%= link_to '詳細を確認', feed %>
+              </button>
+            </td>
+            <td>
+              <button type="button" name="button">
+                <%= link_to '画像を変更', edit_feed_path(feed) %>
+              </button>
+            </td>
+            <td>
+              <button type="button" name="button">
+                <%= link_to '画像を削除', feed, method: :delete, data: { confirm: '投稿を削除しますか？' } %>
+              </button>
+            </td>
+          </tr>
+        <% end %>
+      </div>
+    </tbody>
+  </table>
+</div>
 
 <br>
 
-<div class="toukou_button">
+<footer>
   <button type="button" name="new_toukou" value="">
     <%= link_to '新規投稿', new_feed_path %>
   </button>
-</div>
+</footer>

@@ -1,12 +1,13 @@
-<h1>投稿画像を変更</h1>
+<div class="feeds_body">
+  <h1>投稿画像を変更</h1>
+  <%= render 'form', feed: @feed %>
+</div>
 
-<%= render 'form', feed: @feed %>
-
-<div class="edit_footer">
+<footer>
   <button type="button" name="button">
     <%= link_to '詳細を確認', @feed %>
   </button>
   <button type="button" name="button">
     <%= link_to '一覧へ戻る', feeds_path %>
   </button>
-</div>
+</footer>

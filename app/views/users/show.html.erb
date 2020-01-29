@@ -1,5 +1,10 @@
-<h1><%= @user.name %>のページ</h1>
+<div class="users_body">
+  <h1><%= @user.name %>のページ</h1>
+  <p>メールアドレス: <%= @user.email %></p>
+</div>
 
-<p>メールアドレス: <%= @user.email %></p>
-
-<%= link_to '投稿画面へ', feeds_path %>
+<footer>
+  <button type="button" name="button">
+    <%= link_to '投稿画面へ', feeds_path %>
+  </button>
+</footer>

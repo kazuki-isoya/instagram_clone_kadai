@@ -1,5 +1,10 @@
-<h1>新しい投稿</h1>
+<div class="feeds_body">
+  <h1>新しい投稿</h1>
+  <%= render 'form', feed: @feed %>
+</div>
 
-<%= render 'form', feed: @feed %>
-
-<%= link_to '戻る', feeds_path %>
+<footer>
+  <button type="button" name="button">
+    <%= link_to '戻る', feeds_path %>
+  </button>
+</footer>

@@ -13,9 +13,11 @@
 
   <div class="field">
     <%= form.label :画像の説明 %>
+    <br>
     <%= form.text_field :content %>
     <br>
     <%= form.label :画像 %>
+    <br>
     <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>

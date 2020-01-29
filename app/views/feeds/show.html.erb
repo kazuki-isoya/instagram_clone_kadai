@@ -1,13 +1,17 @@
-<p>コメント：<%= @feed.content %></p>
-<p>
-  画像
-  <%= image_tag @feed.image.url %>
-</p>
+<div class="feeds_body">
+  <p>コメント：<%= @feed.content %></p>
+  <p>
+    画像
+    <%= image_tag @feed.image.url %>
+  </p>
+</div>
 
-<button type="button" name="button">
-  <%= link_to '編集', edit_feed_path(@feed) %>
-</button>
+<footer>
+  <button type="button" name="button">
+    <%= link_to '編集', edit_feed_path(@feed) %>
+  </button>
 
-<button type="button" name="button">
-  <%= link_to '戻る', feeds_path %>
-</button>
+  <button type="button" name="button">
+    <%= link_to '戻る', feeds_path %>
+  </button>
+</footer>

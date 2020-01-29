@@ -1,32 +1,39 @@
-<h1>新しいユーザーを作成</h1>
+<div class="users_body">
+  <h1>新しいユーザーを作成</h1>
 
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> アカウントは作成出来ません</h2>
-    <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> アカウントは作成出来ません</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :名前 %>
-  <%= f.text_field :name %>
-  <br>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <%= f.label :名前 %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
 
-  <%= f.label :Eメールアドレス %>
-  <%= f.email_field :email %>
-  <br>
+    <%= f.label :Eメールアドレス %>
+    <br>
+    <%= f.email_field :email %>
+    <br>
 
-  <%= f.label :パスワード %>
-  <%= f.password_field :password %>
-  <br>
+    <%= f.label :パスワード %>
+    <br>
+    <%= f.password_field :password %>
+    <br>
 
-  <%= f.label :パスワード（確認用） %>
-  <%= f.password_field :password_confirmation %>
-  <br>
+    <%= f.label :パスワード（確認用） %>
+    <br>
+    <%= f.password_field :password_confirmation %>
+    <br>
+    <br>
 
-  <%= f.submit "これでユーザーを作成する" %>
-<% end %>
+    <%= f.submit "これでユーザーを作成する" %>
+  <% end %>
+</div>
