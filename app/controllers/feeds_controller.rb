@@ -1,4 +1,5 @@
 class FeedsController < ApplicationController
+  before_action :login_check
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -58,11 +59,20 @@ class FeedsController < ApplicationController
   end
 
   private
+
+
     def set_feed
       @feed = Feed.find(params[:id])
     end
 
     def feed_params
       params.require(:feed).permit(:content, :image, :image_cache)
+    end
+
+    def login_check
+      unless logged_in?
+        flash[:alert] = "ログインしてください"
+        redirect_to root_path
+      end
     end
 end

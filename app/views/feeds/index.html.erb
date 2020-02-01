@@ -40,7 +40,9 @@
 <br>
 
 <footer>
-  <button type="button" name="new_toukou" value="">
-    <%= link_to '新規投稿', new_feed_path %>
-  </button>
+  <% if logged_in? %>
+    <button type="button" name="new_toukou" value="">
+      <%= link_to '新規投稿', new_feed_path %>
+    </button>
+  <% end %>
 </footer>
