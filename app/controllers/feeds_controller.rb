@@ -1,5 +1,7 @@
 class FeedsController < ApplicationController
   before_action :login_check
+  before_action :logged_in?
+  before_action :current_user
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -70,5 +72,5 @@ class FeedsController < ApplicationController
       params.require(:feed).permit(:content, :image, :image_cache)
     end
 
-    
+
 end

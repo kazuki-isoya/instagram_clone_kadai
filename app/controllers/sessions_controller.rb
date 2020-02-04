@@ -1,12 +1,12 @@
 class SessionsController < ApplicationController
-  before_action :logged_in?, only: [:new, :destroy]
+  # before_action :logged_in?, only: [:new, :destroy]
 
   def new
-    unless logged_in?
+    # unless logged_in?
       @user = User.new
-    else
-      redirect_to root_path, notice: 'すでにログインしています。'
-    end
+    # else
+      # redirect_to root_path, notice: 'すでにログインしています。'
+    # end
   end
 
   def create

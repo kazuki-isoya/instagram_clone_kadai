@@ -21,16 +21,18 @@
                 <%= link_to '詳細を確認', feed %>
               </button>
             </td>
-            <td>
-              <button type="button" name="button">
-                <%= link_to '画像を変更', edit_feed_path(feed) %>
-              </button>
-            </td>
-            <td>
-              <button type="button" name="button">
-                <%= link_to '画像を削除', feed, method: :delete, data: { confirm: '投稿を削除しますか？' } %>
-              </button>
-            </td>
+            <% if logged_in? %>
+              <td>
+                <button type="button" name="button">
+                  <%= link_to '画像を変更', edit_feed_path(feed) %>
+                </button>
+              </td>
+              <td>
+                <button type="button" name="button">
+                  <%= link_to '画像を削除', feed, method: :delete, data: { confirm: '投稿を削除しますか？' } %>
+                </button>
+              </td>
+            <% end %>
           </tr>
         <% end %>
       </div>
