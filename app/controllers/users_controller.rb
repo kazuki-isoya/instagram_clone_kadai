@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 def update
   @user = User.find(params[:id])
 
-  # if current_user == @user
+  if current_user == @user
 
     if @user.update(user_params)
       flash[:success] = 'ユーザー情報を編集しました。'
@@ -33,9 +33,9 @@ def update
       render :edit
     end
 
-  # else
-  #     redirect_to root_url
-  # end
+  else
+      redirect_to root_url
+  end
 end
 
 
