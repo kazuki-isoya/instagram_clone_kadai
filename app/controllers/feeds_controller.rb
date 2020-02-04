@@ -70,10 +70,5 @@ class FeedsController < ApplicationController
       params.require(:feed).permit(:content, :image, :image_cache)
     end
 
-    def login_check
-      unless logged_in?
-        flash[:alert] = "ログインしてください"
-        redirect_to root_path
-      end
-    end
+    
 end
