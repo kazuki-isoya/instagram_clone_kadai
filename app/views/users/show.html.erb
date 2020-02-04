@@ -1,10 +1,14 @@
 <div class="users_body">
   <h1><%= @user.name %>のページ</h1>
   <p>メールアドレス: <%= @user.email %></p>
+  <p>
+    プロフィール画像:
+    <%= image_tag @user.image.url %>
+  </p>
 </div>
 
 <footer>
   <button type="button" name="button">
-    <%= link_to '投稿画面へ', feeds_path %>
+    <%= link_to '投稿する', feeds_path %>
   </button>
 </footer>
