@@ -23,11 +23,5 @@ class SessionsController < ApplicationController
 
   private
 
-  # def login_check
-  #   unless logged_in?
-  #     # flash[:alert] = "ログインしてください"
-  #     redirect_to root_path, notice: 'ログインしてください'
-  #   end
-  # end
 
 end
