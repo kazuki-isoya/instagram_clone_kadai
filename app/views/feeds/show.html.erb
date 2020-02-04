@@ -8,9 +8,11 @@
 </div>
 
 <footer>
-  <button type="button" name="button">
-    <%= link_to '編集', edit_feed_path(@feed) %>
-  </button>
+  <% if current_user.id == @feed.user.id %>
+    <button type="button" name="button">
+      <%= link_to '編集', edit_feed_path(@feed) %>
+    </button>
+  <% end %>
 
   <button type="button" name="button">
     <%= link_to '戻る', feeds_path %>

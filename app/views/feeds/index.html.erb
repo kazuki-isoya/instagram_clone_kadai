@@ -21,7 +21,7 @@
                 <%= link_to '詳細を確認', feed %>
               </button>
             </td>
-            <% if logged_in? %>
+            <% if current_user.id == feed.user.id %>
               <td>
                 <button type="button" name="button">
                   <%= link_to '画像を変更', edit_feed_path(feed) %>
