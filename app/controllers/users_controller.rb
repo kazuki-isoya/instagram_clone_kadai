@@ -19,15 +19,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def edit
+
+def edit
+  if current_user == @user
     @user = User.find(params[:id])
+  else
+    redirect_to root_url, notice: '他のユーザーのプロフィールは編集できません！'
   end
+end
+
 
 def update
-  @user = User.find(params[:id])
-
   if current_user == @user
-
+    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = 'ユーザー情報を編集しました。'
       render :edit
@@ -37,7 +41,7 @@ def update
     end
 
   else
-      redirect_to root_url
+      redirect_to root_url, notice: '他のユーザーのプロフィールは編集できません！'
   end
 end
 
