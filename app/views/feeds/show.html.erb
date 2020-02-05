@@ -8,13 +8,18 @@
 </div>
 
 <footer>
-  <% if current_user.id == @feed.user.id %>
-    <button type="button" name="button">
-      <%= link_to '編集', edit_feed_path(@feed) %>
-    </button>
+  <% unless @feed.user_id == current_user.id %>
+    <% if @favorite.present? %>
+      <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+    <% else %>
+      <%= link_to 'お気に入りする', favorites_path(feed_id: @feed.id), method: :post, class: 'btn btn-primary' %>
+    <% end %>
   <% end %>
 
-  <button type="button" name="button">
-    <%= link_to '戻る', feeds_path %>
-  </button>
+
+  <% if current_user.id == @feed.user.id %>
+      <%= link_to '編集', edit_feed_path(@feed), class: 'btn btn-primary' %>
+  <% end %>
+
+    <%= link_to '戻る', feeds_path, class: 'btn btn-primary' %>
 </footer>
