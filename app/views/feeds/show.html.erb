@@ -5,7 +5,16 @@
     画像:
     <%= image_tag @feed.image.url %>
   </p>
+  <br>
+  <h4>お気に入りにしたユーザー</h4>
+  <% @feed.favorite_users.each do |user| %>
+    <%= user.name %>
+  <% end %>
 </div>
+
+
+
+
 
 <footer>
   <% unless @feed.user_id == current_user.id %>
@@ -15,6 +24,8 @@
       <%= link_to 'お気に入りする', favorites_path(feed_id: @feed.id), method: :post, class: 'btn btn-primary' %>
     <% end %>
   <% end %>
+
+
 
 
   <% if current_user.id == @feed.user.id %>
