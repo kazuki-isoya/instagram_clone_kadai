@@ -20,30 +20,34 @@ class UsersController < ApplicationController
   end
 
 
-def edit
-  if current_user == @user
-    @user = User.find(params[:id])
-  else
-    redirect_to root_url, notice: '他のユーザーのプロフィールは編集できません！'
-  end
-end
-
-
-def update
-  if current_user == @user
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      flash[:success] = 'ユーザー情報を編集しました。'
-      render :edit
+  def edit
+    if current_user == @user
+      @user = User.find(params[:id])
     else
-      flash.now[:danger] = 'ユーザー情報の編集に失敗しました。'
-      render :edit
-    end
-
-  else
       redirect_to root_url, notice: '他のユーザーのプロフィールは編集できません！'
+    end
   end
-end
+
+
+  def update
+    if current_user == @user
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        flash[:success] = 'ユーザー情報を編集しました。'
+        render :edit
+      else
+        flash.now[:danger] = 'ユーザー情報の編集に失敗しました。'
+        render :edit
+      end
+
+    else
+        redirect_to root_url, notice: '他のユーザーのプロフィールは編集できません！'
+    end
+  end
+
+  def favorite_index
+    @favorites = current_user.favorite_feeds
+  end
 
 
 

@@ -1,0 +1,27 @@
+<h1>お気に入り一覧 </h1>
+  <% @favorites.each do |favorite| %>
+      <div class ="favorite_index">
+        <table>
+          <tr>
+            <td>
+            <%= link_to feed_path(favorite) do%>
+              <%= image_tag(favorite.image.url) if favorite.image.present? %>
+            <% end %>
+            </td>
+          <br>
+          <tr>
+            <td>
+              <p><%= favorite.content %></p>
+            </td>
+          </tr>
+          <br>
+          <tr>
+            <td>
+              <p><%= favorite.user.name %>の投稿</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+  <% end %>
+<p><%= link_to "投稿一覧へ", feeds_path %></p>
+<p><%= link_to "プロフィールへ", user_path(current_user.id) %></p>

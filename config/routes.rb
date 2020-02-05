@@ -6,7 +6,11 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-  resources :sessions
-  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users do
+    collection do
+      get :favorite_index
+    end
+  end
   resources :favorites, only: [:create, :destroy]
 end
