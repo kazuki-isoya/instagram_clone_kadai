@@ -32,17 +32,18 @@ class FeedsController < ApplicationController
   def create
     @feed = Feed.new(feed_params)
     @feed.user_id = current_user.id
-      if params[:back]
-        render :new
+    if params[:back]
+      render :new
+    else
+      if @feed.save
+        FeedMailer.feed_mail(@feed).deliver
+        
+        redirect_to feeds_path, notice: "投稿しました！"
       else
-        if @feed.save
-          FeedMailer.feed_mail(@feed).deliver
-          redirect_to feeds_path, notice: "投稿しました！"
-        else
-          render 'new'
-        end
+        render 'new'
       end
     end
+  end
 
 
   def update
