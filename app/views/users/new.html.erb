@@ -14,32 +14,29 @@
   <% end %>
 
   <%= form_with(model: @user, local: true) do |f| %>
-    <%= f.label :名前 %>
-    <br>
-    <%= f.text_field :name %>
-    <br>
-
-    <%= f.label :Eメールアドレス %>
-    <br>
-    <%= f.email_field :email %>
-    <br>
-
-    <%=f.label :image,"ユーザー画像" %>
-    <br>
-    <%= f.file_field :image %>
-    <br>
-
-    <%= f.label :パスワード %>
-    <br>
-    <%= f.password_field :password %>
-    <br>
-
-    <%= f.label :パスワード（確認用） %>
-    <br>
-    <%= f.password_field :password_confirmation %>
-    <br>
-    <br>
-
-    <%= f.submit "これでユーザーを作成する", class: 'btn btn-primary'%>
+    <div class="form-group">
+      <%= f.label :名前 %>
+      <br>
+      <%= f.text_field :name, class: 'form-control' %>
+      <br>
+      <%= f.label :Eメールアドレス %>
+      <br>
+      <%= f.email_field :email, class: 'form-control' %>
+      <br>
+      <%=f.label :image,"ユーザー画像" %>
+      <br>
+      <%= f.file_field :image %>
+      <br>
+      <%= f.label :パスワード %>
+      <br>
+      <%= f.password_field :password, class: 'form-control' %>
+      <br>
+      <%= f.label :パスワード（確認用） %>
+      <br>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <br>
+      <br>
+      <%= f.submit "これでユーザーを作成する", class: 'btn btn-primary'%>
+    </div>
   <% end %>
 </div>

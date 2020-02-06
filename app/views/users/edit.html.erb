@@ -15,7 +15,7 @@
     <div class="form-group">
       <%= f.label :image, 'プロフィール画像' %>
       <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
-      <%= f.file_field :image, class: 'form-control' %>
+      <%= f.file_field :image %>
     </div>
 
     <div class="form-group">

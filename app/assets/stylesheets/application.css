@@ -26,14 +26,14 @@
   font-size: 2rem;
 }
 
-header{
+/* header{
   background-color: blue;
   color: white;
   height: 70px;
   width: 100%;
   position: absolute;
   top: 0;
-}
+} */
 
 .users_show {
   top: 100px;
