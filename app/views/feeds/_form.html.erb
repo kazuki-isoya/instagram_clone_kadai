@@ -1,7 +1,7 @@
 <%= form_with(model: feed, local: true, url:choose_new_or_edit) do |form| %>
   <% if feed.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(feed.errors.count, "error") %> 画像が保存できませんでした:</h2>
+      <h2><%= pluralize(feed.errors.count, "エラー") %> 画像が保存できませんでした:</h2>
 
       <ul>
       <% feed.errors.full_messages.each do |message| %>
@@ -22,8 +22,6 @@
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <br>
+    <%= form.submit  class: 'btn btn-primary' %>
 <% end %>

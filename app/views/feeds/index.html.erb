@@ -17,20 +17,14 @@
             <td>投稿ユーザー:<%= feed.user.name %></td>
             <td>コメント:<%= feed.content %></td>
             <td>
-              <button type="button" name="new_toukou" value="">
-                <%= link_to '詳細を確認', feed %>
-              </button>
+              <%= link_to '詳細を確認', feed, class: 'btn btn-primary' %>
             </td>
             <% if current_user.id == feed.user.id %>
               <td>
-                <button type="button" name="button">
-                  <%= link_to '画像を変更', edit_feed_path(feed) %>
-                </button>
+                <%= link_to '画像を変更', edit_feed_path(feed), class: 'btn btn-primary' %>
               </td>
               <td>
-                <button type="button" name="button">
-                  <%= link_to '画像を削除', feed, method: :delete, data: { confirm: '投稿を削除しますか？' } %>
-                </button>
+                <%= link_to '画像を削除', feed, method: :delete, data: { confirm: '投稿を削除しますか？' }, class: 'btn btn-primary' %>
               </td>
             <% end %>
           </tr>
@@ -44,8 +38,6 @@
 
 <footer>
   <% if logged_in? %>
-    <button type="button" name="new_toukou" value="">
-      <%= link_to '新規投稿', new_feed_path %>
-    </button>
+    <%= link_to '新規投稿', new_feed_path, class: 'btn btn-primary' %>
   <% end %>
 </footer>

@@ -15,15 +15,9 @@
 </div>
 
 <footer>
-  <button type="button" name="button">
-    <%= link_to '投稿画面へ', feeds_path %>
-  </button>
+  <%= link_to '投稿画面へ', feeds_path, class: 'btn btn-primary' %>
   <% if current_user.id == @user.id %>
-    <button type="button" name="button">
-      <%= link_to 'プロフィールを編集', edit_user_path %>
-    </button>
-    <button type="button" name="button">
-      <%= link_to 'お気に入り一覧', favorite_index_users_path %>
-    </button>
+    <%= link_to 'プロフィールを編集', edit_user_path, class: 'btn btn-primary' %>
+    <%= link_to 'お気に入り一覧', favorite_index_users_path, class: 'btn btn-primary' %>
   <% end %>
 </footer>

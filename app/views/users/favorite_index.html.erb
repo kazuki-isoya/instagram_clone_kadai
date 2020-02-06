@@ -23,5 +23,5 @@
         </table>
       </div>
   <% end %>
-<p><%= link_to "投稿一覧へ", feeds_path %></p>
-<p><%= link_to "プロフィールへ", user_path(current_user.id) %></p>
+<p><%= link_to "投稿一覧へ", feeds_path, class: 'btn btn-primary' %></p>
+<p><%= link_to "プロフィールへ", user_path(current_user.id), class: 'btn btn-primary' %></p>
