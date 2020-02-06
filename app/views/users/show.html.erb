@@ -7,10 +7,10 @@
     <%= image_tag @user.image.url %>
   </p>
   <br>
-  <h4>お気に入りにした投稿</h4>
-  <br>
+  <h3>お気に入りにした投稿</h3>
   <% @user.favorite_feeds.each do |feed| %>
     <%= feed.content %>
+    <br>
   <% end %>
 </div>
 
