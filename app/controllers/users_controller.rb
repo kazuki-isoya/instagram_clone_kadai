@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
 
   def edit
+    @user = User.find(params[:id])
     if current_user == @user
       @user = User.find(params[:id])
     else
@@ -31,14 +32,15 @@ class UsersController < ApplicationController
 
 
   def update
+    @user = User.find(params[:id])
     if current_user == @user
       @user = User.find(params[:id])
       if @user.update(user_params)
-        flash[:success] = 'ユーザー情報を編集しました。'
-        render :edit
+        flash[:notice] = 'ユーザー情報を編集しました!'
+        render :show
       else
-        flash.now[:danger] = 'ユーザー情報の編集に失敗しました。'
-        render :edit
+        flash.now[:notice] = 'ユーザー情報の編集に失敗しました!'
+        render :show
       end
 
     else
