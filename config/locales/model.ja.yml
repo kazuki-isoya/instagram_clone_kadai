@@ -6,6 +6,7 @@ ja:
     attributes:
       feed:
         content: コメント
+        image: 画像
         error: エラー
       user:
         name: 名前
