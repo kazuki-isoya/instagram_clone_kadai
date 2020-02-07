@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user.id), notice: 'アカウントが作成されました'
+      redirect_to feeds_path, notice: 'アカウントが作成されました'
     else
       render 'new'
     end
@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-
 
   def edit
     @user = User.find(params[:id])
@@ -30,7 +29,6 @@ class UsersController < ApplicationController
     end
   end
 
-
   def update
     @user = User.find(params[:id])
     if current_user == @user
@@ -40,7 +38,7 @@ class UsersController < ApplicationController
         render :show
       else
         flash.now[:notice] = 'ユーザー情報の編集に失敗しました!'
-        render :show
+        render :edit
       end
 
     else
@@ -51,9 +49,6 @@ class UsersController < ApplicationController
   def favorite_index
     @favorites = current_user.favorite_feeds
   end
-
-
-
 
   private
 

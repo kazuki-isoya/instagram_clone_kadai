@@ -4,11 +4,10 @@
     <title>InstagramClone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-fixed-top navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">インスタクローン</a>
@@ -21,10 +20,10 @@
           <p class="navbar-text navbar-right">ログイン中のユーザー:<%= current_user.name %></p>
           <p class="navbar-text navbar-right"><%= link_to "ログアウトする", session_path(current_user.id), method: :delete %></p>
           <p class="navbar-text navbar-right"><%= link_to "プロフィール", user_path(current_user.id) %></p>
+          <p class="navbar-text navbar-right"><%= link_to "新規投稿", new_feed_path, color: 'green' %></p>
         <% else %>
           <p class="navbar-text navbar-right"><%= link_to "ログインする", new_session_path %></p>
           <p class="navbar-text navbar-right"><%= link_to "新しいユーザーを作成", new_user_path %></p>
-
         <% end %>
       </div>
     </div>
@@ -37,5 +36,4 @@
       <%= yield %>
     </body>
   </div>
-
 </html>

@@ -2,7 +2,6 @@
   <% if feed.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(feed.errors.count, "エラー") %> 画像が保存できませんでした:</h2>
-
       <ul>
       <% feed.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,7 +9,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="form-group">
     <%= form.label :画像の説明 %>
     <br>

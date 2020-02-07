@@ -1,5 +1,4 @@
 <div class="users_body">
-  <%= notice %><%= alert %>
   <h1>ユーザーを編集</h1>
   <%= form_for(@user) do |f| %>
     <div class="form-group">
@@ -29,5 +28,7 @@
     </div>
 
     <div class="al-c"><%= f.submit 'プロフィール編集を完了する', class: 'btn btn-primary' %></div>
+    <br>
+    <%= link_to 'プロフィール詳細に戻る', user_path(current_user.id), class: 'btn btn-primary' %>
   <% end %>
 </div>

@@ -1,5 +1,4 @@
 <div class="users_body">
-  <!-- <%= notice %><%= alert %> -->
   <h1><%= @user.name %>のページ</h1>
   <p>メールアドレス: <%= @user.email %></p>
   <p>
@@ -13,7 +12,6 @@
     <br>
   <% end %>
 </div>
-
 <footer>
   <%= link_to '投稿画面へ', feeds_path, class: 'btn btn-primary' %>
   <% if current_user.id == @user.id %>

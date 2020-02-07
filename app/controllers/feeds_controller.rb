@@ -37,7 +37,7 @@ class FeedsController < ApplicationController
     else
       if @feed.save
         FeedMailer.feed_mail(@feed).deliver
-        
+
         redirect_to feeds_path, notice: "投稿しました！"
       else
         render 'new'
@@ -65,14 +65,13 @@ class FeedsController < ApplicationController
 
   private
 
+  def set_feed
+    @feed = Feed.find(params[:id])
+  end
 
-    def set_feed
-      @feed = Feed.find(params[:id])
-    end
-
-    def feed_params
-      params.require(:feed).permit(:content, :image, :image_cache)
-    end
+  def feed_params
+    params.require(:feed).permit(:content, :image, :image_cache)
+  end
 
 
 end

@@ -1,5 +1,4 @@
 <div class="feeds_body">
-  <%= notice %><%= alert %>
   <p>コメント：<%= @feed.content %></p>
   <p>
     画像:
@@ -12,11 +11,6 @@
     <br>
   <% end %>
 </div>
-
-
-
-
-
 <footer>
   <% unless @feed.user_id == current_user.id %>
     <% if @favorite.present? %>
@@ -25,13 +19,8 @@
       <%= link_to 'お気に入りする', favorites_path(feed_id: @feed.id), method: :post, class: 'btn btn-primary' %>
     <% end %>
   <% end %>
-
-
-
-
   <% if current_user.id == @feed.user.id %>
       <%= link_to '編集', edit_feed_path(@feed), class: 'btn btn-primary' %>
   <% end %>
-
     <%= link_to '戻る', feeds_path, class: 'btn btn-primary' %>
 </footer>
