@@ -4,14 +4,13 @@
   <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
     <div class="form-group">
       <%= f.label :Eメール %>
-      <br>
       <%= f.email_field :email, class: 'form-control' %>
-      <br>
+    </div>
+    <div class="form-group">
       <%= f.label :パスワード %>
-      <br>
       <%= f.password_field :password, class: 'form-control' %>
     </div>
+    <%= image_tag "インスタトップ.png" %>
   <br>
-  <br>
-    <%= f.submit "ログイン", class: 'btn btn-primary' %>
+    <%= f.submit "ログイン", class: 'btn btn-primary btn-lg' %>
   <% end %>
