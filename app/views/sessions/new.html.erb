@@ -2,15 +2,21 @@
   <!-- <%= notice %><%= alert %> -->
   <h1>ログイン</h1>
   <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-    <div class="form-group">
-      <%= f.label :Eメール %>
-      <%= f.email_field :email, class: 'form-control' %>
+    <div class="low">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :Eメール %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :パスワード %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-offset-2 col-md-4">
+        <%= image_tag "insta_top.png", size: '300x500' %>
+      </div>
     </div>
-    <div class="form-group">
-      <%= f.label :パスワード %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-    <%= image_tag "インスタトップ.png" %>
   <br>
     <%= f.submit "ログイン", class: 'btn btn-primary btn-lg' %>
   <% end %>
