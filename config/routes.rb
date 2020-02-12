@@ -16,4 +16,9 @@ Rails.application.routes.draw do
   end
   resources :favorites, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+
+  #DM機能
+  resources :conversations do
+    resources :messages
+  end
 end
