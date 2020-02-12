@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   before_action :login_check, only: [:edit, :update]
   before_action :logged_in?, only: [:edit, :update]
   before_action :current_user, only: [:edit, :update]
+
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
   end

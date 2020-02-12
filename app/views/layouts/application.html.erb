@@ -21,6 +21,7 @@
           <p class="navbar-text navbar-right"><%= link_to "ログアウトする", session_path(current_user.id), method: :delete %></p>
           <p class="navbar-text navbar-right"><%= link_to "プロフィール", user_path(current_user.id) %></p>
           <p class="navbar-text navbar-right"><%= link_to "新規投稿", new_feed_path, color: 'green' %></p>
+          <p class="navbar-text navbar-right"><%= link_to 'ユーザー一覧', users_path %></p>
         <% else %>
           <p class="navbar-text navbar-right"><%= link_to "ログインする", new_session_path %></p>
           <p class="navbar-text navbar-right"><%= link_to "新しいユーザーを作成", new_user_path %></p>
