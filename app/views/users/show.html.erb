@@ -11,11 +11,25 @@
     <%= feed.content %>
     <br>
   <% end %>
-</div>
-<footer>
-  <%= link_to '投稿画面へ', feeds_path, class: 'btn btn-primary' %>
-  <% if current_user.id == @user.id %>
-    <%= link_to 'プロフィールを編集', edit_user_path, class: 'btn btn-primary' %>
-    <%= link_to 'お気に入り一覧', favorite_index_users_path, class: 'btn btn-primary' %>
+
+  <h3>フォローしているユーザー</h3>
+  <% @user.following.each do |user| %>
+    <%= user.name %>
+    <br>
   <% end %>
-</footer>
+
+  <h3>フォロワー一覧</h3>
+  <% @user.followers.each do |user| %>
+    <%= user.name %>
+    <br>
+  <% end %>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container-fluid">
+    <%= link_to '投稿画面へ', feeds_path, class: 'btn btn-primary' %>
+    <% if current_user.id == @user.id %>
+      <%= link_to 'プロフィールを編集', edit_user_path, class: 'btn btn-primary' %>
+      <%= link_to 'お気に入り一覧', favorite_index_users_path, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</nav>
