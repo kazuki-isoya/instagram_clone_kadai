@@ -13,6 +13,7 @@ class ConversationsController < ApplicationController
       redirect_to conversation_messages_path(@conversation)
     else
       redirect_to root_path
+    end
   end
 
 
