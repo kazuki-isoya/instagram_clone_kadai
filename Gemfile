@@ -42,5 +42,5 @@ gem 'faker'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'fog-aws'
 gem 'dotenv-rails'
-gem 'unicorn' # アプリケーションサーバのunicorn
+gem 'unicorn', '5.5.1' # アプリケーションサーバのunicorn
 gem 'mini_racer', platforms: :ruby # デプロイ時に必要
