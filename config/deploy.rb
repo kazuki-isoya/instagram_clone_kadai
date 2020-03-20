@@ -4,7 +4,7 @@ lock '3.6.0'
 set :application, 'instagram_c'
 # cloneするgitのレポジトリ
 # （xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'https://github.com/kazuki-isoya/instagram_clone_kadai'
+set :repo_url, 'https://github.com/kazuki-isoya/instagram_clone_kadai.git'
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
 # deploy先のディレクトリ。
