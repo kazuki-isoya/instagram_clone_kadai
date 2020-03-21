@@ -13,11 +13,7 @@ class FeedsController < ApplicationController
   end
 
   def new
-    if params[:back]
-      @feed = Feed.new(feed_params)
-    else
-      @feed = Feed.new
-    end
+    @feed = Feed.new
   end
 
   def confirm
@@ -32,15 +28,11 @@ class FeedsController < ApplicationController
   def create
     @feed = Feed.new(feed_params)
     @feed.user_id = current_user.id
-    if params[:back]
-      render :new
-    else
+    respond_to do |format|
       if @feed.save
-        FeedMailer.feed_mail(@feed).deliver
-
-        redirect_to feeds_path, notice: "投稿しました！"
+        format.html { redirect_to @feed, notice: '画像が投稿されました' }
       else
-        render 'new'
+        format.html { render :new }
       end
     end
   end
